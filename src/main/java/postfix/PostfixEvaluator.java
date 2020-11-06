@@ -59,6 +59,34 @@ public class PostfixEvaluator {
             Token currToken = scanner.getToken();
             System.out.println(currToken);
 
+            if (currToken.isVariable() && stack.size() == 1)
+                throw new MalformedExpressionException("Incorrect expression");
+
+            if(currToken.isDouble()) {
+                stack.push(currToken);
+            }
+            else{
+                String operator =currToken.getName();
+
+                if (stack.size() == 0) throw new MalformedExpressionException();
+
+                double second = stack.pop().getValue();
+                double first = stack.pop().getValue();
+
+                switch (operator){
+                    case "+":
+                        stack.push(new Token(first+second));
+                        break;
+                    case "-":
+                        stack.push(new Token(first-second));
+                        break;
+                    case "*":
+                        stack.push(new Token(first*second));
+                        break;
+                }
+
+            }
+
             // add your code here
             // now process the token, etc.
             // You should read the implementation of the Token class
