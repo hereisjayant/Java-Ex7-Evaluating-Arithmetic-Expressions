@@ -107,6 +107,8 @@ public class ArithmeticExpressionTree {
 				return new SubtractNode(leftExpr, rightExpr);
 			case "*":
 				return new MultiplyNode(leftExpr, rightExpr);
+			case "/":
+				return new DivideNode(leftExpr, rightExpr);
 			default:
 				throw new MalformedExpressionException();
 			}

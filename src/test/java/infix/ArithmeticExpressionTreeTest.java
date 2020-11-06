@@ -41,7 +41,8 @@ public class ArithmeticExpressionTreeTest {
 		ArithmeticExpressionTree myTree;
 		try {
 			myTree = new ArithmeticExpressionTree(expr);
-			fail("Should have thrown an exception because we have not implemented divide yet!");
+			assertEquals(myTree.eval(), new BigDecimal(1.0));
+//			fail("Should have thrown an exception because we have not implemented divide yet!");
 		}
 		catch( Exception e ) {
 			assertEquals(1,1);

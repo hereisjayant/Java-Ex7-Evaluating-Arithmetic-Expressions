@@ -2,7 +2,7 @@ package infix;
 
 import java.math.BigDecimal;
 
-public class MultiplyNode extends Node {
+public class DivideNode extends Node {
 
 	static final int numChildren = 2;
 
@@ -10,11 +10,11 @@ public class MultiplyNode extends Node {
 	 * Create a new node that represents a multiplication operation. The two
 	 * children of this node represent the two operands, although they may be
 	 * subexpressions that need to be evaluated.
-	 * 
+	 *
 	 * @param leftNode
 	 * @param rightNode
 	 */
-	public MultiplyNode(Node leftNode, Node rightNode) {
+	public DivideNode(Node leftNode, Node rightNode) {
 		super(leftNode, rightNode);
 	}
 
@@ -25,7 +25,7 @@ public class MultiplyNode extends Node {
 	 */
 	public BigDecimal evaluate() {
 		return super.getChild(0).evaluate()
-			.multiply(super.getChild(1).evaluate());
+			.divide(super.getChild(1).evaluate());
 	}
 
 	/**
@@ -34,7 +34,7 @@ public class MultiplyNode extends Node {
 	 * @return '*' for multiplication.
 	 */
 	public char getOpName() {
-		return '*';
+		return '/';
 	}
 
 }
