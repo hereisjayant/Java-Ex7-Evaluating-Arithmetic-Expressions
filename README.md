@@ -1,5 +1,3 @@
-**CPEN 221 / Fall 2020 / Exercise 8**
-
 # Evaluating Arithmetic Expressions
 
 ------
@@ -15,7 +13,7 @@ Through this activity, you will learn to work with stacks and [binary] trees.
 
 ### Suggested Reading
 
-- Wikipedia entry on 
+- Wikipedia entry on
 
    Postfix Notation
 
